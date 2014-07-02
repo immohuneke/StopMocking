@@ -1,22 +1,16 @@
 package designfortestability.exercises;
 
-import org.jetbrains.annotations.TestOnly;
-
 import designfortestability.collaborators.AwkwardCollaborator;
 
 public class SqueezeOutQueryToAwkward {
 
     private AwkwardCollaborator awkward;
 
-    public String doSomething() {
-    	return doSomethingInternal(awkward.query());
-    }
 
-    @TestOnly
-    String doSomethingInternal(String queryResult) {
+    public String doSomething() {
         //some code...
 
-        String temp = queryResult.indexOf(2, 5) + "..." + "...";
+        String temp = awkward.query().indexOf(2, 5) + "..." + "...";
 
 
         // more code...
